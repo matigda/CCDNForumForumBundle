@@ -176,6 +176,7 @@ board:
     announcements-th:                  "Annonces"
     label:                             "Board : "
     name-label:                        "Nom : "
+    parent-label:                      "Parent Board: "
     topic-count-label:                 "Topics : "
     post-count-label:                  "Posts : "
     description-label:                 "Description : "

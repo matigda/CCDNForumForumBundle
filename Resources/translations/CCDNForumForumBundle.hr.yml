@@ -176,6 +176,7 @@ board:
     announcements-th:                  "Najave"
     label:                             "Ploča: "
     name-label:                        "Ime: "
+    parent-label:                      "Szülők Ploča: "
     topic-count-label:                 "Teme: "
     post-count-label:                  "Postovi: "
     description-label:                 "Opic: "
