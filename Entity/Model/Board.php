@@ -23,7 +23,13 @@ abstract class Board
     /** @var Category $category */
     protected $category = null;
 
-    /** @var ArrayCollection $topic */
+    /** @var ArrayCollection|Board[] $children */
+    protected $children;
+
+    /** @var Board $parentBoard */
+    protected $parent;
+
+    /** @var ArrayCollection $topics */
     protected $topics;
 
     /** @var Post $lastPost */
@@ -37,6 +43,7 @@ abstract class Board
     {
         // your own logic
         $this->topics = new ArrayCollection();
+        $this->children = new ArrayCollection();
     }
 
     /**
@@ -60,6 +67,46 @@ abstract class Board
         $this->category = $category;
 
         return $this;
+    }
+
+    /**
+     * Get children boards.
+     *
+     * @return ArrayCollection|Board[]
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    /**
+     * Set children boards.
+     *
+     * @param ArrayCollection|Board[] $children
+     */
+    public function setChildren($children)
+    {
+        $this->children = $children;
+    }
+
+    /**
+     * Get parent board.
+     *
+     * @return Board|null
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Set parent board.
+     *
+     * @param Board|null $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
     }
 
     /**
