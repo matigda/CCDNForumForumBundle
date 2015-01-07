@@ -136,6 +136,23 @@ class Board extends AbstractBoard
     }
 
     /**
+     * Get name as path (including names of parent boards)
+     *
+     * @return string
+     */
+    public function getNamePath()
+    {
+        $names = array($this->getName());
+
+        $board = $this;
+        while(null !== ($board = $board->getParent())) {
+            array_unshift($names, $board->getName());
+        }
+
+        return join(' / ', $names);
+    }
+
+    /**
      * Get description
      *
      * @return string

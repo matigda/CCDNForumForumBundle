@@ -95,7 +95,7 @@ class BoardUpdateFormType extends AbstractType
             ->add('parent', null,
                 array(
                     'required' => false,
-                    'property' => 'name',
+                    'property' => 'namePath',
                     'label' => 'board.parent-label',
                     'translation_domain' => 'CCDNForumForumBundle',
                 )
