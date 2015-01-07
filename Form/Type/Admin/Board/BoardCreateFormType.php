@@ -94,6 +94,14 @@ class BoardCreateFormType extends AbstractType
                     'translation_domain' => 'CCDNForumForumBundle',
                 )
             )
+            ->add('parent', null,
+                array(
+                    'required' => false,
+                    'property' => 'name',
+                    'label' => 'board.parent-label',
+                    'translation_domain' => 'CCDNForumForumBundle',
+                )
+            )
             ->add('name', 'text',
                 array(
                     'label'              => 'board.name-label',
