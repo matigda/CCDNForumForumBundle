@@ -1,5 +1,5 @@
 CCDNForum\ForumBundle\Entity\Registry:
-    type: entity
+    type: mappedSuperclass
     table: cc_forum_registry
     id:
         id:
