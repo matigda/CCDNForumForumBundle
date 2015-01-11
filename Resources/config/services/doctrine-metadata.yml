@@ -1,0 +1,21 @@
+parameters:
+
+    ccdn_forum_forum.event_subscriber.load_orm_metadata.class: CCDNForum\ForumBundle\EventListener\LoadORMMetadataSubscriber
+
+services:
+
+    #
+    # LoadORMMetadataSubscriber
+    #
+    # Doctrine listener used to manipulate mappings to allow entity inheritance. Models will be defined as
+    # "mappedSuperclass" instead of as "entity" and the listener will transform them to entities, if no inherited
+    # entity exists.
+    #
+    # Based on the code of the Sylius ResourceBundle.
+    #
+    ccdn_forum_forum.event_subscriber.load_orm_metadata:
+        class: %ccdn_forum_forum.event_subscriber.load_orm_metadata.class%
+        arguments:
+            - %ccdn_forum_forum.config.classes%
+        tags:
+            - { name: doctrine.event_subscriber }

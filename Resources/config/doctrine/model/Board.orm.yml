@@ -32,11 +32,10 @@ CCDNForum\ForumBundle\Entity\Board:
             column: topic_reply_authorised_roles
             nullable: true
     oneToMany:
-        #### TODO: FIX THIS!
-        ##topics:
-        ##    targetEntity: CCDNForum\ForumBundle\Entity\Topic
-        ##    mappedBy: board
-        ##    cascade: ["remove"]
+        topics:
+            targetEntity: CCDNForum\ForumBundle\Entity\Topic
+            mappedBy: board
+            cascade: ["remove"]
     manyToOne:
         category:
             targetEntity: CCDNForum\ForumBundle\Entity\Category
