@@ -12,6 +12,9 @@
  */
 
 namespace CCDNForum\ForumBundle;
+use CCDNForum\ForumBundle\DependencyInjection\Compiler\ResolveDoctrineTargetEntitiesPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  *
@@ -26,14 +29,22 @@ namespace CCDNForum\ForumBundle;
  * Doctrine mapping and resolve target entities code based on the code of the Sylius ResourceBundle
  * (c) Paweł Jędrzejewski.
  */
-class CCDNForumForumBundle extends AbstractEntityInheritanceBundle
+class CCDNForumForumBundle extends Bundle
 {
     /**
-     * Configure format of mapping files.
-     *
-     * @var string
+     * {@inheritdoc}
      */
-    protected $mappingFormat = self::MAPPING_YAML;
+    public function build(ContainerBuilder $container)
+    {
+        $interfaces = $this->getModelInterfaces();
+        if (!empty($interfaces)) {
+            $container->addCompilerPass(
+                new ResolveDoctrineTargetEntitiesPass(
+                    $interfaces
+                )
+            );
+        }
+    }
 
     /**
      * Target entities resolver configuration (Interface / Mapped Superclass - Actually used Model Class).
@@ -51,15 +62,5 @@ class CCDNForumForumBundle extends AbstractEntityInheritanceBundle
             'CCDNForum\ForumBundle\Entity\Subscription'     => 'ccdn_forum_forum.entity.subscription.class',
             'CCDNForum\ForumBundle\Entity\Topic'            => 'ccdn_forum_forum.entity.topic.class',
         );
-    }
-
-    /**
-     * Return the entity namespace.
-     *
-     * @return string
-     */
-    protected function getModelNamespace()
-    {
-        return 'CCDNForum\ForumBundle\Entity';
     }
 }
