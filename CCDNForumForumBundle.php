@@ -26,8 +26,13 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @version  Release: 2.0
  * @link     https://github.com/codeconsortium/CCDNForumForumBundle
  *
- * Doctrine mapping and resolve target entities code based on the code of the Sylius ResourceBundle
- * (c) Paweł Jędrzejewski.
+ * Support for inherited entities:
+ *
+ * Doctrine resolve target entities code and orm metadata listener based on the code of the Sylius ResourceBundle
+ * by (c) Paweł Jędrzejewski and Ivan Molchanov <ivan.molchanov@opensoftdev.ru>.
+ *
+ * It allows us to define the entities as type "mappedSuperclass" instead of as "entity" and this way it is possible
+ * to create inherited entities in other bundles and extend the existing ones.
  */
 class CCDNForumForumBundle extends Bundle
 {
