@@ -52,7 +52,7 @@ class CCDNForumForumBundle extends Bundle
     }
 
     /**
-     * Target entities resolver configuration (Interface / Mapped Superclass - Actually used Model Class).
+     * Target entities resolver configuration (Mapped superclass => Config key pointing to actually used class)
      *
      * @return array
      */
