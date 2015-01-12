@@ -32,7 +32,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * by (c) Paweł Jędrzejewski and Ivan Molchanov <ivan.molchanov@opensoftdev.ru>.
  *
  * It allows us to define the entities as type "mappedSuperclass" instead of as "entity" and this way it is possible
- * to create inherited entities in other bundles and extend the existing ones.
+ * to create inherited entities in other bundles e.g. to add your own custom fields.
  */
 class CCDNForumForumBundle extends Bundle
 {

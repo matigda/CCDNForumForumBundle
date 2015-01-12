@@ -1,4 +1,7 @@
 CCDNForum\ForumBundle\Entity\Subscription:
+    # We are using "mappedSuperclass" here to allow to optionally create inherited entity classes and this way add your
+    # own custom fields. This is possible by using the "ResolveDoctrineTargetEntitiesPass" compiler pass and the
+    # "LoadORMMetadataSubscriber" listener.
     type: mappedSuperclass
     table: cc_forum_subscription
     id:
