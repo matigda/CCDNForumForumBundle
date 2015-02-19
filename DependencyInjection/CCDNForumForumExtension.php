@@ -104,6 +104,7 @@ class CCDNForumForumExtension extends Extension
         $loader->load('services/forms-topic.yml');
         $loader->load('services/forms-post.yml');
         $loader->load('services/twig-extensions.yml');
+        $loader->load('services/doctrine-metadata.yml');
     }
 
     /**
@@ -122,6 +123,18 @@ class CCDNForumForumExtension extends Extension
         $container->setParameter('ccdn_forum_forum.entity.post.class', $config['entity']['post']['class']);
         $container->setParameter('ccdn_forum_forum.entity.subscription.class', $config['entity']['subscription']['class']);
         $container->setParameter('ccdn_forum_forum.entity.registry.class', $config['entity']['registry']['class']);
+
+        // list of model classes for the LoadORMMetadataSubscriber
+        $classes = array();
+        foreach($config['entity'] as $key => $entityConfig) {
+            $classes[$key] = array(
+                'model' => $entityConfig['class']
+            );
+        }
+        if ($container->hasParameter('ccdn_forum_forum.config.classes')) {
+            $classes = array_merge($classes, $container->getParameter('ccdn_forum_forum.config.classes'));
+        }
+        $container->setParameter('ccdn_forum_forum.config.classes', $classes);
 
         return $this;
     }
