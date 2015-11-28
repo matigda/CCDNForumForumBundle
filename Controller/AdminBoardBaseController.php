@@ -35,7 +35,6 @@ class AdminBoardBaseController extends BaseController
      */
     protected function getFormHandlerToCreateBoard($categoryFilter = null)
     {
-        echo 'test';
         $formHandler = $this->container->get('ccdn_forum_forum.form.handler.board_create');
 
         $formHandler->setRequest($this->getRequest());
