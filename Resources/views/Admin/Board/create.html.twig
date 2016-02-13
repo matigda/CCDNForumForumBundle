@@ -32,6 +32,29 @@
 
 				{{- form_errors(form) -}}
 
+
+				{{ form_label(form.name) }}
+				{{ form_widget(form.name) }}
+				<br />
+
+				{{ form_label(form.readAuthorisedRoles) }} <br />
+				{% for role in form.readAuthorisedRoles.children %}
+					{{ role.vars.label | raw }}
+					{{ form_widget(role) }}
+				{% endfor %}
+
+				<br />{{ form_label(form.topicCreateAuthorisedRoles) }} <br />
+				{% for role in form.topicCreateAuthorisedRoles.children %}
+					{{ role.vars.label | raw }}
+					{{ form_widget(role) }}
+				{% endfor %}
+
+				<br />{{ form_label(form.topicReplyAuthorisedRoles) }} <br />
+				{% for role in form.topicReplyAuthorisedRoles.children %}
+					{{ role.vars.label | raw }}
+					{{ form_widget(role) }}
+				{% endfor %}
+
 				{{- form_rest(form) -}}
 
 				<div class="form-group">
