@@ -99,7 +99,7 @@ link:
         index:                         "Forum Index"
         create:                        "Stwórz nową kategorię"
     board:
-        create:                        "Create New Board"
+        create:                        "Stwórz nowego boarda"
     topic:
         create:                        "Stwórz temat"
         reply:                         "Odpowiedz"
@@ -143,13 +143,14 @@ filter:
 forum:
     label:                             "Forum: "
     id-th:                             "ID"
-    name-th:                           "Name"
+    name-th:                           "Nazwa forum"
     category-count-th:                 "Ilość kategorii"
-    name-label:                        "Nazwa: "
+    name-label:                        "Name: "
     roles:
         board-view-label:              "Role boardu:"
     confirm-delete-label:              "Potwierdzam, że chcę usunąć to forum."
     confirm-delete-subordinates-label: "Usuń rownież kategorie, boardy i tematy."
+
 category:
     label:                             "Kategoria"
     id-th:                             "ID"
@@ -171,14 +172,14 @@ board:
     topics-th:                         "Tematy"
     view-count-th:                     "Wyświetlenia"
     reply-count-th:                    "Odpowiedzi"
-    topic-count-th:                    "Tematów"
+    topic-count-th:                    "Ilość tematów"
     post-count-th:                     "Postów"
     last-post-th:                      "Ostatni post"
     announcements-th:                  "Ogłoszenia"
     label:                             "Board: "
     name-label:                        "Nazwa: "
     parent-label:                      "Board-rodzic: "
-    topic-count-label:                 "Tematów: "
+    topic-count-label:                 "Ilość ematów: "
     post-count-label:                  "Postów: "
     description-label:                 "Opis: "
     confirm-delete-label:              "Potwierdzam, że chcę usunąć ten board"
