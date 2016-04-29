@@ -188,7 +188,7 @@ board:
         topic-create-label:            "Topic Create Roles: "
         topic-view-label:              "Topic View Roles: "
         topic-reply-label:             "Topic Reply Roles: "
-    no-topics:                         "There are no topics for this board, be the first to post one!"
+    no-topics:                         "Bądź pierwszym, który rozpocznie dyskusję!"
 topic:
     label:                             "Topic: "
     board-label:                       "Board: "
