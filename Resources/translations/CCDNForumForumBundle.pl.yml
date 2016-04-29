@@ -192,7 +192,7 @@ board:
 topic:
     label:                             "Topic: "
     board-label:                       "Board: "
-    title-label:                       "Title: "
+    title-label:                       "Tytuł: "
     confirm-delete-label:              "Chcę usunąć temat."
     subscription-count-label:          "Subsryberzy: "
     view-count-label:                  "Obejrzeń: "
@@ -213,7 +213,7 @@ post:
     deleted-by:                        "Skasowany przez "
     locked-by:                         "Zablokowany przez "
     confirm-delete-label:              "Chcę usunąć ten post."
-    body-label:                        "Body:"
+    body-label:                        "Treść:"
     subscribe-label:                   "Subskrybuj temat."
     unlock-until-label:                "Unlock Until:"
     has_been_locked:                   "Ten post zostal zablokowany."
